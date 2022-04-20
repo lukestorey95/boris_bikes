@@ -1,0 +1,2 @@
+This program is for a prokect on the Makers Academy Bootcamp. 
+Commisioned by Transport for London, the program is a network of docking stations and bikes that anyone can use. It emulates all the docking stations, bikes, and infrastructure (repair staff, and so on).
