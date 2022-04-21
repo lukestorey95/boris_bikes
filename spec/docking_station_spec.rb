@@ -2,17 +2,27 @@ require 'docking_station'
 
 describe DockingStation do
 it 'responds to the method release_bike' do
-  bike = DockingStation.new
-  expect(bike.release_bike).to be_truthy
+  bike = Bike.new
+  subject.dock(bike)
+  expect(subject.release_bike).to eq bike
 end
-it 'gets a bike and tests if it is working' do
+  describe '#working?' do
+    it 'gets a bike and tests if it is working' do
   station = DockingStation.new
-  bike = station.release_bike
+  bike = Bike.new
   working_bike = bike.working?
   expect(bike).to be_truthy
-end
+    end
 
-it 'is expected to respond to dock' do
+end
+  describe '#release_bike' do
+    it 'raises an error when there are no bikes available' do
+      expect {subject.release_bike}.to raise_error 'No bikes available'
+    end
+  end
+
+
+    it 'is expected to respond to dock' do
   expect { subject.to respond_to(:dock).with(1).argument }
 end
 it 'is expected to respond to bike' do 
@@ -28,5 +38,6 @@ it 'checks if there is a bike docked' do
   docked_bike = station.dock(bike)
   expect(docked_bike)
 end
+
 # it "shows the condition of a bike as working or not" do
 end 
