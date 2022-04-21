@@ -21,6 +21,14 @@ end
     end
   end
 
+  describe '#dock' do 
+    it 'raises error if dock is full' do
+      subject.dock(Bike.new)
+      expect {subject.dock Bike.new}.to raise_error 'Dock is full'
+    end
+  end
+
+
 
     it 'is expected to respond to dock' do
   expect { subject.to respond_to(:dock).with(1).argument }
