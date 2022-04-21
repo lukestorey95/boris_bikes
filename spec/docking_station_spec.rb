@@ -12,6 +12,21 @@ it 'gets a bike and tests if it is working' do
   expect(bike).to be_truthy
 end
 
-# it "shows the condition of a bike as working or not" do 
-
+it 'is expected to respond to dock' do
+  expect { subject.to respond_to(:dock).with(1).argument }
+end
+it 'is expected to respond to bike' do 
+  expect { subject.to respond_to(:bike)}
+end
+it 'docks something' do
+  bike = Bike.new
+  expect(subject.dock(bike)).to eq bike
+end
+it 'checks if there is a bike docked' do
+  bike = Bike.new
+  station = DockingStation.new
+  docked_bike = station.dock(bike)
+  expect(docked_bike)
+end
+# it "shows the condition of a bike as working or not" do
 end 
