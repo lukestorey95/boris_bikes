@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require 'bike'
 require 'docking_station'
 
