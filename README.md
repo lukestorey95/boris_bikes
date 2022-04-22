@@ -1,5 +1,7 @@
 # Boris Bikes
 
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
+
 This program allows the user to emulate a working network of ~~Boris Bikes~~ Santander Bikes, including all the docking stations, bikes, and necessary infrastructure (repair staff etc.).
 
 ## How to use

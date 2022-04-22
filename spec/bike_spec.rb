@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Bike do
   subject(:bike) { Bike.new }
 
@@ -12,10 +14,10 @@ describe Bike do
       it 'return false' do
         bike.report_broken
         expect(bike).to_not be_working
-      end  
+      end
     end
   end
-    
+
   describe '#report_broken' do
     it 'responds' do
       expect(bike).to respond_to(:report_broken)

@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 describe DockingStation do
   subject(:docking_station) { DockingStation.new }
-  let(:bike) { instance_double("Bike", working?: true) }
-  
+  let(:bike) { instance_double('Bike', working?: true) }
+
   def fill_docking_station
     DockingStation::DEFAULT_CAPACITY.times { docking_station.dock(bike) }
   end
 
   describe '#initialize' do
-    subject { DockingStation}
+    subject { DockingStation }
     it { should respond_to(:new).with(1) }
   end
 
@@ -31,12 +33,12 @@ describe DockingStation do
 
     context 'when empty' do
       it 'raise an error' do
-        expect {docking_station.release_bike}.to raise_error 'No bikes available'
+        expect { docking_station.release_bike }.to raise_error 'No bikes available'
       end
     end
   end
 
-  describe '#dock' do 
+  describe '#dock' do
     it { should respond_to(:dock).with(1).argument }
 
     it 'dock the bike' do
@@ -46,12 +48,12 @@ describe DockingStation do
     context 'when dock is full' do
       it 'raise error' do
         fill_docking_station
-        expect{ docking_station.dock(bike) }.to raise_error 'Dock is full'
+        expect { docking_station.dock(bike) }.to raise_error 'Dock is full'
       end
     end
   end
 
   describe '#bikes' do
-    it { should respond_to :bikes}
+    it { should respond_to :bikes }
   end
-end 
+end
