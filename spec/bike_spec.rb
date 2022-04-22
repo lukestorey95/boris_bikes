@@ -1,5 +1,3 @@
-require './lib/docking_station.rb'
-
 describe Bike do
   it 'asks the bike if it is working' do
   bike = Bike.new
