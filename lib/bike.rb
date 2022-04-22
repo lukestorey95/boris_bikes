@@ -1,5 +1,4 @@
 class Bike
-
   def initialize
     @bike_condition = true
   end
